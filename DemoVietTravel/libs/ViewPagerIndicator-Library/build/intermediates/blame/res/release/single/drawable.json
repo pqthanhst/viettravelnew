@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\outputandroidstudio\\github viettravel\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\release\\drawable\\vpi__tab_indicator.xml",
+        "source": "E:\\outputandroidstudio\\github viettravel\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\drawable\\vpi__tab_indicator.xml"
+    },
+    {
         "merged": "E:\\outputandroidstudio\\viettravel\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\release\\drawable\\vpi__tab_indicator.xml",
         "source": "E:\\outputandroidstudio\\viettravel\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\drawable\\vpi__tab_indicator.xml"
     }
