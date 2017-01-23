@@ -1,10 +1,18 @@
 [
     {
+        "merged": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\debug\\color\\vpi__dark_theme.xml",
+        "source": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\color\\vpi__dark_theme.xml"
+    },
+    {
         "merged": "E:\\outputandroidstudio\\viettravel\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\debug\\color\\vpi__dark_theme.xml",
         "source": "E:\\outputandroidstudio\\viettravel\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\color\\vpi__dark_theme.xml"
     },
     {
         "merged": "E:\\outputandroidstudio\\viettravel\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\debug\\color\\vpi__light_theme.xml",
         "source": "E:\\outputandroidstudio\\viettravel\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\color\\vpi__light_theme.xml"
+    },
+    {
+        "merged": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\debug\\color\\vpi__light_theme.xml",
+        "source": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\color\\vpi__light_theme.xml"
     }
 ]
