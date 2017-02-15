@@ -5,26 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <ImageView
-        android:id="@+id/ivPlaceBac"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/placebac"/>
-    <ImageView
-        android:id="@+id/ivPlaceTrungBac"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/placetrungbac"/>
-    <ImageView
-        android:id="@+id/ivPlaceTrungNam"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/placetrungnam"/>
-    <ImageView
-        android:id="@+id/ivPlaceNam"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/placemiennam"/>
+
     <ImageView
         android:id="@+id/ivMapPlace"
         android:layout_width="match_parent"

@@ -29,7 +29,8 @@ import thanh.hcm.vn.demoviettravel.residemenu.ResideMenuItem;
 import thanh.hcm.vn.demoviettravel.utils.Contants;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class
+MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static ResideMenu resideMenu;
     private ResideMenuItem itemHome, itemPlace, itemFood, itemHotel, itemVehicle, itemLanguage, itemAbout, itemSetting;
