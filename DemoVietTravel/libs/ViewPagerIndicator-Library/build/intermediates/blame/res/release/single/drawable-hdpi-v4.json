@@ -1,7 +1,15 @@
 [
     {
+        "merged": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\vpi__tab_selected_focused_holo.9.png",
+        "source": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\drawable-hdpi\\vpi__tab_selected_focused_holo.9.png"
+    },
+    {
         "merged": "E:\\outputandroidstudio\\github viettravel\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\vpi__tab_unselected_holo.9.png",
         "source": "E:\\outputandroidstudio\\github viettravel\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\drawable-hdpi\\vpi__tab_unselected_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\vpi__tab_selected_pressed_holo.9.png",
+        "source": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\drawable-hdpi\\vpi__tab_selected_pressed_holo.9.png"
     },
     {
         "merged": "E:\\outputandroidstudio\\github viettravel\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\vpi__tab_selected_focused_holo.9.png",
@@ -24,8 +32,24 @@
         "source": "E:\\outputandroidstudio\\github viettravel\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\drawable-hdpi\\vpi__tab_selected_holo.9.png"
     },
     {
+        "merged": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\vpi__tab_unselected_focused_holo.9.png",
+        "source": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\drawable-hdpi\\vpi__tab_unselected_focused_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\vpi__tab_selected_holo.9.png",
+        "source": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\drawable-hdpi\\vpi__tab_selected_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\vpi__tab_unselected_pressed_holo.9.png",
+        "source": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\drawable-hdpi\\vpi__tab_unselected_pressed_holo.9.png"
+    },
+    {
         "merged": "E:\\outputandroidstudio\\github viettravel\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\vpi__tab_unselected_focused_holo.9.png",
         "source": "E:\\outputandroidstudio\\github viettravel\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\drawable-hdpi\\vpi__tab_unselected_focused_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\vpi__tab_unselected_holo.9.png",
+        "source": "C:\\Users\\thanh\\Documents\\GitHub\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\res\\drawable-hdpi\\vpi__tab_unselected_holo.9.png"
     },
     {
         "merged": "E:\\outputandroidstudio\\github viettravel\\viettravelnew\\DemoVietTravel\\libs\\ViewPagerIndicator-Library\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\vpi__tab_unselected_pressed_holo.9.png",
