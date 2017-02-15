@@ -79,16 +79,8 @@ public class PlaceFragment extends BaseFragment {
         rlListPlace = (LinearLayout) view.findViewById(R.id.rlListPlace);
         rcvListPlace = (RecyclerView) view.findViewById(R.id.rcvListPlace);
 
-<<<<<<< HEAD
-        Display display = ((Activity) context).getWindowManager().getDefaultDisplay();
-=======
-        Log.e("color bac :","red :"+Color.red(bitmapBac.getPixel(5,5))+"-green :"+Color.green(bitmapBac.getPixel(5,5))+"-blue :"+Color.blue(bitmapBac.getPixel(5,5)));
-        Log.e("color trung bac :","red :"+Color.red(bitmapTrungBac.getPixel(5,5))+"-green :"+Color.green(bitmapTrungBac.getPixel(5,5))+"-blue :"+Color.blue(bitmapTrungBac.getPixel(5,5)));
-        Log.e("color trung nam :","red :"+Color.red(bitmapTrungNam.getPixel(5,5))+"-green :"+Color.green(bitmapTrungNam.getPixel(5,5))+"-blue :"+Color.blue(bitmapTrungNam.getPixel(5,5)));
-        Log.e("color bitmap nam :","red :"+Color.red(bitmapNam.getPixel(5,5))+"-green :"+Color.green(bitmapNam.getPixel(5,5))+"-blue :"+Color.blue(bitmapNam.getPixel(5,5)));
-
         Display display = ((Activity)context).getWindowManager().getDefaultDisplay();
->>>>>>> origin/master
+
         int width = display.getWidth();  // deprecated
         int height = display.getHeight();  // deprecated
 
@@ -124,7 +116,6 @@ public class PlaceFragment extends BaseFragment {
                 if (action == MotionEvent.ACTION_DOWN) {
 
                     //click(v, x, y);
-<<<<<<< HEAD
 //                    if (x >= widthScreen * 15 && x <= widthScreen * 63 && y >= heightScreen * 2 && y <= heightScreen * 19) {
 //                        Toast.makeText(context, "Mien Bac", Toast.LENGTH_SHORT).show();
 //                        rlListPlace.setVisibility(View.VISIBLE);
@@ -145,33 +136,8 @@ public class PlaceFragment extends BaseFragment {
                     }else if(checkIsPlaceTrungNam(x,y)){
                         Toast.makeText(context, "Mien Trung Nam", Toast.LENGTH_SHORT).show();
                     }else if(checkIsPlaceNam(x,y)){
-                        Toast.makeText(context, "Mien Nam", Toast.LENGTH_SHORT).show();
-=======
-                    if(x>=widthScreen*15 && x<=widthScreen*63 && y>=heightScreen*2 && y<=heightScreen*19){
-                        Toast.makeText(context,"Mien Bac",Toast.LENGTH_SHORT).show();
-                        rlListPlace.setVisibility(View.VISIBLE);
-                        Contants.currentStatus = 1;
-                    }else if(x>=widthScreen*35 && x<=widthScreen*68 && y>=heightScreen*19 && y<=heightScreen*37){
-                        Toast.makeText(context,"Mien Trung Bac",Toast.LENGTH_SHORT).show();
-                    }else if(x>=widthScreen*36 && x<=widthScreen*77 && y>=heightScreen*37 && y<=heightScreen*58){
-                        Toast.makeText(context,"Mien Trung Nam",Toast.LENGTH_SHORT).show();
-                    }else if(x>=widthScreen*18 && x<=widthScreen*48 && (y>=heightScreen*58 || y>=heightScreen*55) && y<=heightScreen*80){
-                        Toast.makeText(context,"Mien Nam",Toast.LENGTH_SHORT).show();
->>>>>>> origin/master
-                    }
+                        Toast.makeText(context, "Mien Nam", Toast.LENGTH_SHORT).show();}
 
-//                    if(red == Color.red(bitmapBac.getPixel(5,5)) && green == Color.green(bitmapBac.getPixel(5,5)) && blue == Color.blue(bitmapBac.getPixel(5,5))){
-//                        Toast.makeText(context,"Mien Bac",Toast.LENGTH_SHORT).show();
-//                        rlListPlace.setVisibility(View.VISIBLE);
-//                        Contants.currentStatus = 1;
-//                    }
-//                    else if(red == Color.red(bitmapTrungBac.getPixel(5,5)) && green == Color.green(bitmapTrungBac.getPixel(5,5)) && blue == Color.blue(bitmapTrungBac.getPixel(5,5))){
-//                        Toast.makeText(context,"Mien Trung Bac",Toast.LENGTH_SHORT).show();
-//                    }else if(red==Color.red(bitmapTrungNam.getPixel(5,5)) && green == Color.green(bitmapTrungNam.getPixel(5,5)) && blue == Color.blue(bitmapTrungNam.getPixel(5,5))){
-//                        Toast.makeText(context,"Mien Trung Nam",Toast.LENGTH_SHORT).show();
-//                    }else if(red ==Color.red(bitmapNam.getPixel(5,5)) && green == Color.green(bitmapNam.getPixel(5,5)) && blue == Color.blue(bitmapNam.getPixel(5,5))){
-//                        Toast.makeText(context,"Mien Nam",Toast.LENGTH_SHORT).show();
-//                    }
                 }
                 return false;
             }
