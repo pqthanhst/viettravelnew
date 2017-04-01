@@ -17,10 +17,13 @@ import org.greenrobot.eventbus.EventBus;
 
 import thanh.hcm.vn.demoviettravel.R;
 import thanh.hcm.vn.demoviettravel.fragment.AboutFragment;
+import thanh.hcm.vn.demoviettravel.fragment.FoodDetailFragment;
 import thanh.hcm.vn.demoviettravel.fragment.FoodFragment;
 import thanh.hcm.vn.demoviettravel.fragment.HomeFragment;
+import thanh.hcm.vn.demoviettravel.fragment.HotelDetailFragment;
 import thanh.hcm.vn.demoviettravel.fragment.HotelsFragment;
 import thanh.hcm.vn.demoviettravel.fragment.LanguageFragment;
+import thanh.hcm.vn.demoviettravel.fragment.PlaceDetailFragment;
 import thanh.hcm.vn.demoviettravel.fragment.PlaceFragment;
 import thanh.hcm.vn.demoviettravel.fragment.SettingFragment;
 import thanh.hcm.vn.demoviettravel.fragment.VehicleFragment;
@@ -51,7 +54,7 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
         fm = getSupportFragmentManager();
         if (savedInstanceState == null) {
             switchFragment(getString(R.string.side_nav_home_page), null, false);
-            //switchFragment("Home", null, false);
+
         }
     }
 
@@ -123,29 +126,6 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         return resideMenu.dispatchTouchEvent(ev);
     }
-
-//    @Override
-//    public void onClick(View v) {
-//        if (v == itemHome) {
-//            changeFrament(new HomeFragment(), "Home");
-//        } else if (v == itemPlace) {
-//            changeFrament(new PlaceFragment(), "Places");
-//        } else if (v == itemFood) {
-//            changeFrament(new FoodFragment(), "Foods");
-//        } else if (v == itemHotel) {
-//            changeFrament(new HotelsFragment(), "Hotels");
-//        } else if (v == itemVehicle) {
-//            changeFrament(new VehicleFragment(), "Vehicle");
-//        } else if (v == itemLanguage) {
-//            changeFrament(new LanguageFragment(), "Language");
-//        } else if (v == itemAbout) {
-//            changeFrament(new AboutFragment(), "About");
-//        } else if (v == itemSetting) {
-//            changeFrament(new SettingFragment(), "Setting");
-//        }
-//
-//        resideMenu.closeMenu();
-//    }
 
     @Override
     public void onClick(View view) {
@@ -256,10 +236,17 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
                 Contants.currentStatus = 0;
             }
 
-            //child fragment
-//            else if(fm.findFragmentByTag(fragmentName) == null && fragmentName.equalsIgnoreCase(context.getString(R.string.side_nav_fr_manage_add_team_individual))){
-//                fragment = new FragmentManageTeamAddIndividual();
-//            }
+           // child fragment
+            else if(fm.findFragmentByTag(fragmentName) == null && fragmentName.equalsIgnoreCase(mcontext.getString(R.string.place_detail_page))){
+                fragment = PlaceDetailFragment.getInstall();
+                //Contants.currentStatus =0;
+            }else if(fm.findFragmentByTag(fragmentName) == null && fragmentName.equalsIgnoreCase(mcontext.getString(R.string.food_detail_page))){
+                fragment = FoodDetailFragment.getInstall();
+                //Contants.currentStatus =0;
+            }else if(fm.findFragmentByTag(fragmentName) == null && fragmentName.equalsIgnoreCase(mcontext.getString(R.string.hotel_detail_page))){
+                fragment = HotelDetailFragment.getInstall();
+                //Contants.currentStatus =0;
+            }
 
 
             if (fragment != null && ft != null) {
@@ -324,8 +311,8 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
     public void onBackPressed() {
         if (fm != null && fm.getBackStackEntryCount() > 0) {
             Log.e("backpress 1", "--" + Contants.currentStatus);
-
             fm.popBackStack();
+
 
         } else {
             if (fm != null && fm.findFragmentByTag(getString(R.string.side_nav_home_page)) == null) {

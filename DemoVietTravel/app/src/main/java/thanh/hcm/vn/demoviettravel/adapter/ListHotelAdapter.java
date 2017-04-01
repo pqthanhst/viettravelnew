@@ -17,6 +17,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import thanh.hcm.vn.demoviettravel.R;
+import thanh.hcm.vn.demoviettravel.activity.MainActivity;
 import thanh.hcm.vn.demoviettravel.model.FoodModel;
 import thanh.hcm.vn.demoviettravel.model.HotelModel;
 
@@ -36,18 +37,21 @@ private int width, height;
 public class MyViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView ivPhoto;
-    private TextView tvName,tvAddress;
+    private TextView tvName,tvAddress,tvTime;
     private RatingBar rtbStart;
+    private RelativeLayout rlItemRowPlace;
 
     public MyViewHolder(View view) {
         super(view);
 
+        rlItemRowPlace = (RelativeLayout) view.findViewById(R.id.rlItemRowPlace);
         ivPhoto =(ImageView) view.findViewById(R.id.ivItemRowPlace);
         tvName =(TextView) view.findViewById(R.id.tvItemRowPlaceName);
         tvAddress=(TextView) view.findViewById(R.id.tvItemRowPlaceAddress);
-        //tvTime =(TextView) view.findViewById(R.id.tvItemRowPlaceTime);
         rtbStart=(RatingBar) view.findViewById(R.id.rtbStart);
         rtbStart.setVisibility(View.VISIBLE);
+        tvTime =(TextView) view.findViewById(R.id.tvItemRowPlaceTime);
+        tvTime.setVisibility(View.GONE);
     }
 }
 
@@ -75,9 +79,13 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
 
         holder.tvName.setText(hotel.getNameHotel());
         holder.tvAddress.setText(hotel.getAddressHotel());
-        //holder.tvTime.setText("Ratting : "+ hotel.getNumRanting());
-
         holder.rtbStart.setRating(hotel.getNumRanting());
+        holder.rlItemRowPlace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.switchFragment(context.getString(R.string.hotel_detail_page), null, true);
+            }
+        });
     }
 
     @Override

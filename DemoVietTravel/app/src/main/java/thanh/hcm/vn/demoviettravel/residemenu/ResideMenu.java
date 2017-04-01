@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import thanh.hcm.vn.demoviettravel.R;
+import thanh.hcm.vn.demoviettravel.utils.Contants;
 
 /**
  * User: special
@@ -401,12 +402,15 @@ public class ResideMenu extends FrameLayout {
 
     public void setSwipeDirectionDisable(int direction) {
         disabledSwipeDirection.add(direction);
+        if(Contants.DEBUG_MODE)
+            Log.e("disable","is run");
     }
 
     public void setSwipeDirectionEnable() {
         if(disabledSwipeDirection.size()>0){
           //int num = disabledSwipeDirection.remove(disabledSwipeDirection.indexOf(direction));
             disabledSwipeDirection.clear();
+            if(Contants.DEBUG_MODE)
             Log.e("remove disable","is run");
         }
     }

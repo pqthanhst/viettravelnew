@@ -15,6 +15,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 import thanh.hcm.vn.demoviettravel.R;
+import thanh.hcm.vn.demoviettravel.activity.MainActivity;
+import thanh.hcm.vn.demoviettravel.fragment.PlaceDetailFragment;
 import thanh.hcm.vn.demoviettravel.model.PlaceModel;
 
 /**
@@ -63,7 +65,6 @@ public class ListPlaceAdapter extends RecyclerView.Adapter<ListPlaceAdapter.MyVi
         PlaceModel place = placeList.get(position);
 
         holder.ivPhoto.setLayoutParams(layoutParams);
-//        holder.ivPhoto.setBackgroundResource(place.getPhotoPlace());
         Picasso.with(context)
                 .load(place.getPhotoPlace()).centerCrop().resize(width,height).error(R.drawable.ic_launcher)
                 .into(holder.ivPhoto);
@@ -71,6 +72,13 @@ public class ListPlaceAdapter extends RecyclerView.Adapter<ListPlaceAdapter.MyVi
         holder.tvName.setText(place.getNamePlace());
         holder.tvAddress.setText(place.getAddressPlace());
         holder.tvTime.setText("Best time visit: "+place.getTimePlace());
+        holder.ivPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.switchFragment(context.getString(R.string.place_detail_page), null, true);
+
+            }
+        });
     }
 
     @Override

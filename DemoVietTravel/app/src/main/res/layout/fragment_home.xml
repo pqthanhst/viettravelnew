@@ -7,7 +7,7 @@
 
     <!-- Top Sliding Banners -->
     <LinearLayout
-        android:id="@+id/rlHome"
+        android:id="@+id/lnHome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -72,13 +72,19 @@
                     android:gravity="center_vertical"
                     />
             </LinearLayout>
-            <android.support.v4.view.ViewPager
-                android:id="@+id/pagerPlace"
+            <!--<android.support.v4.view.ViewPager-->
+                <!--android:id="@+id/pagerPlace"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_below="@+id/lnTitleHotPlace"-->
+
+                <!--/>-->
+            <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/lnTitleHotPlace"
-
-                />
+                android:id="@+id/rvPlaceHot"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/lnTitleHotPlace"/>
         </RelativeLayout>
 
 
@@ -114,12 +120,18 @@
                     android:paddingLeft="@dimen/padding_S"
                     />
             </LinearLayout>
-            <android.support.v4.view.ViewPager
-                android:id="@+id/pagerNewPlace"
+            <!--<android.support.v4.view.ViewPager-->
+                <!--android:id="@+id/pagerNewPlace"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_below="@+id/lnTitleNewPlace"-->
+                <!--/>-->
+            <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/lnTitleNewPlace"
-                />
+                android:id="@+id/recyclerView"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/lnTitleNewPlace"/>
         </RelativeLayout>
     </LinearLayout>
 

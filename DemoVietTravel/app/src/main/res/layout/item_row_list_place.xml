@@ -49,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:text="Best time visit: July - December"
                 android:textSize="13sp"
+                android:visibility="visible"
                 />
             <RatingBar
                 android:id="@+id/rtbStart"

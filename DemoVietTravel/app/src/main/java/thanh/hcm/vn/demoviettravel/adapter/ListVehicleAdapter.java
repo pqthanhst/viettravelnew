@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -36,6 +37,7 @@ public class ListVehicleAdapter extends RecyclerView.Adapter<ListVehicleAdapter.
 
         private ImageView ivPhoto;
         private TextView tvName,tvAddress,tvTime;
+        private RatingBar rtbStart;
 
         public MyViewHolder(View view) {
             super(view);
@@ -44,6 +46,9 @@ public class ListVehicleAdapter extends RecyclerView.Adapter<ListVehicleAdapter.
             tvName =(TextView) view.findViewById(R.id.tvItemRowPlaceName);
             tvAddress=(TextView) view.findViewById(R.id.tvItemRowPlaceAddress);
             tvTime =(TextView) view.findViewById(R.id.tvItemRowPlaceTime);
+            tvTime.setVisibility(View.GONE);
+            rtbStart =(RatingBar) view.findViewById(R.id.rtbStart);
+            rtbStart.setVisibility(View.VISIBLE);
         }
     }
 
@@ -71,7 +76,8 @@ public class ListVehicleAdapter extends RecyclerView.Adapter<ListVehicleAdapter.
 
         holder.tvName.setText(vehicle.getNameVehicle());
         holder.tvAddress.setText(vehicle.getTypeVehicle());
-        holder.tvTime.setText("Ratting :"+ vehicle.getNumRattingVehicle());
+        holder.rtbStart.setRating(vehicle.getNumRattingVehicle());
+        //holder.tvTime.setText("Ratting :"+ vehicle.getNumRattingVehicle());
     }
 
     @Override

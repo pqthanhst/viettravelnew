@@ -5,22 +5,29 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import thanh.hcm.vn.demoviettravel.activity.MainActivity;
 import thanh.hcm.vn.demoviettravel.R;
+import thanh.hcm.vn.demoviettravel.activity.MainActivity;
+import thanh.hcm.vn.demoviettravel.adapter.ListPlaceMainAdapter;
 import thanh.hcm.vn.demoviettravel.adapter.SlidingImage_Adapter;
-import thanh.hcm.vn.demoviettravel.adapter.ListPlaceInMainAdapter;
+import thanh.hcm.vn.demoviettravel.model.PlaceModel;
+import thanh.hcm.vn.demoviettravel.utils.StartSnapHelper;
 
 
 public class HomeFragment extends BaseFragment {
@@ -35,14 +42,14 @@ public class HomeFragment extends BaseFragment {
     private static final Integer[] IMAGES= {R.drawable.one,R.drawable.two,R.drawable.five,R.drawable.six,R.drawable.three};
     private ArrayList<Integer> ImagesArray = new ArrayList<Integer>();
 
-
-    private ViewPager pagerPlace;
     private ArrayList<Integer> ImagesArrayPlace = new ArrayList<Integer>();
+    //recycelview
+    private List<PlaceModel> arrayListPlace = new ArrayList<>();
+    private RecyclerView recyclerView, rvPlaceHot;
 
-    private ViewPager pagerNewPlace;
-    private ArrayList<Integer> ImagesArrayNewPlace = new ArrayList<Integer>();
+    private TextView ivTitleHotPlace,ivTitleNewPlace;
 
-    TextView ivTitleHotPlace,ivTitleNewPlace;
+    private LinearLayout lnHome;
 
     private  static HomeFragment homeFragment=null;
 
@@ -85,13 +92,32 @@ public class HomeFragment extends BaseFragment {
         for(int i=0;i<IMAGES2.length;i++)
             ImagesArrayPlace.add(IMAGES2[i]);
 
+        addlistPlace();
+        lnHome=(LinearLayout)view.findViewById(R.id.lnHome);
         mPager = (ViewPager) view.findViewById(R.id.pager);
-        pagerPlace = (ViewPager) view.findViewById(R.id.pagerPlace);
-        pagerNewPlace=(ViewPager) view.findViewById(R.id.pagerNewPlace);
-
         mPager.setAdapter(new SlidingImage_Adapter(context,ImagesArray));
-        pagerPlace.setAdapter(new ListPlaceInMainAdapter(context,ImagesArrayPlace));
-        pagerNewPlace.setAdapter(new ListPlaceInMainAdapter(context,ImagesArrayPlace));
+        rvPlaceHot =(RecyclerView) view.findViewById(R.id.rvPlaceHot);
+        recyclerView =(RecyclerView) view.findViewById(R.id.recyclerView);
+
+        LinearLayoutManager llm = new LinearLayoutManager(context);
+        llm.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+        LinearLayoutManager llmHot = new LinearLayoutManager(context);
+        llmHot.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+        recyclerView.setLayoutManager(llm);
+        rvPlaceHot.setLayoutManager(llmHot);
+
+        SnapHelper startSnapHelper = new StartSnapHelper();
+        startSnapHelper.attachToRecyclerView(recyclerView);
+        SnapHelper startSnapHelper2 = new StartSnapHelper();
+        startSnapHelper2.attachToRecyclerView(rvPlaceHot);
+
+        ListPlaceMainAdapter placeMainAdapter= new ListPlaceMainAdapter(getActivity(),arrayListPlace);
+        recyclerView.setAdapter(placeMainAdapter);
+
+        ListPlaceMainAdapter placeHotMainAdapter= new ListPlaceMainAdapter(getActivity(),arrayListPlace);
+        rvPlaceHot.setAdapter(placeHotMainAdapter);
 
         ivTitleHotPlace=(TextView) view.findViewById(R.id.ivTitleHotPlace);
         ivTitleNewPlace=(TextView) view.findViewById(R.id.ivTitleNewPlace);
@@ -163,33 +189,28 @@ public class HomeFragment extends BaseFragment {
             }
         });
 
-        pagerPlace.setOnTouchListener(new View.OnTouchListener() {
+        lnHome.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(event.getAction() == MotionEvent.ACTION_DOWN){
 
-                    MainActivity.setEnableResideMenu(false);
-
-                }else if(event.getAction() == MotionEvent.ACTION_UP){
                     MainActivity.setEnableResideMenu(true);
+
                 }
                 return false;
             }
         });
 
-        pagerNewPlace.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(event.getAction() == MotionEvent.ACTION_DOWN){
+    }
 
-                    MainActivity.setEnableResideMenu(false);
-
-                }else if(event.getAction() == MotionEvent.ACTION_UP){
-                    MainActivity.setEnableResideMenu(true);
-                }
-                return false;
-            }
-        });
+    private void addlistPlace(){
+        arrayListPlace.add(new PlaceModel(1, R.drawable.imageone, "Fansipan", "Sapa", "Thang 10 - Thang 11"));
+        arrayListPlace.add(new PlaceModel(2, R.drawable.imagefive, "Vinh Ha Long", "Ha Long", "Thang 6 - Thang 9"));
+        arrayListPlace.add(new PlaceModel(3, R.drawable.imagesfour, "Phong Nha ", "Thanh Hoa", "Thang 2 - Thang 3"));
+        arrayListPlace.add(new PlaceModel(4, R.drawable.imagessix, "Vung Tau", "Vung Tau", "Thang 3 - Thang 4"));
+        arrayListPlace.add(new PlaceModel(5, R.drawable.imagetree, "Ca Mau", "Ca Mau", "Thang 1 - Thang 5"));
+        arrayListPlace.add(new PlaceModel(6, R.drawable.imagetwo, "Tram Chim", "Tram Chim", "Thang 4 - Thang 8"));
+        arrayListPlace.add(new PlaceModel(7, R.drawable.imagesfour, "Thap Rua", "Ha Noi", "Thang 7 - Thang 1"));
     }
 
     @Override
@@ -201,5 +222,6 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void onClick(View view) {
         super.onClick(view);
+
     }
 }

@@ -6,6 +6,8 @@ package thanh.hcm.vn.demoviettravel.utils;
 
 public class Contants {
 
+    public static boolean DEBUG_MODE=true;
     public static Integer currentStatus = 0;
+
 
 }

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ScrollView
+        android:id="@+id/svPlaceDetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+        <RelativeLayout
+            android:id="@+id/rlContainerPlaceDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_2sdp">
+            <fragment
+                android:id="@+id/youtube_fragment"
+                android:name="com.google.android.youtube.player.YouTubePlayerSupportFragment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"/>
+            <TextView
+                android:id="@+id/tvTitleListPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:layout_below="@+id/youtube_fragment"
+                android:textSize="15sp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@android:color/holo_red_dark"/>
+
+            <TextView
+                android:id="@+id/tvTitleListFood"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=""
+                android:layout_below="@+id/tvTitleListPhoto"
+                android:textSize="15sp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@android:color/holo_red_dark"/>
+
+            <RelativeLayout
+                android:id="@+id/rlInfoPlaceDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTitleListFood"
+                android:layout_marginTop="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/tvTitleNamePlaceDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Name place:"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:id="@+id/tvNamePlaceDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Ha Long"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/tvBestTimeVisit"/>
+                <TextView
+                    android:id="@+id/tvTitleAddressPlaceDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Address place:"
+                    android:layout_below="@+id/tvTitleNamePlaceDetail"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:id="@+id/tvAddressPlaceDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Mien bac"
+                    android:layout_below="@+id/tvNamePlaceDetail"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/tvBestTimeVisit"/>
+                <TextView
+                    android:id="@+id/tvTitleBestTimeVisit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Best time visit:"
+                    android:layout_below="@+id/tvTitleAddressPlaceDetail"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:id="@+id/tvBestTimeVisit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="9 - 10 "
+                    android:layout_below="@+id/tvAddressPlaceDetail"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/tvTitleAddressPlaceDetail"/>
+                <TextView
+                    android:id="@+id/tvTitleInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Wiki place:"
+                    android:layout_below="@+id/tvTitleBestTimeVisit"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:id="@+id/tvInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="dasdas dsada \n daadasda \ndasda \n dasdadada"
+                    android:layout_below="@+id/tvTitleInfo"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

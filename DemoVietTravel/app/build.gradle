@@ -24,14 +24,19 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+//    compile 'com.android.support:appcompat-v7:22.2.0'
+//    compile 'com.android.support:recyclerview-v7:22.2.0'
+//    compile 'com.android.support:cardview-v7:22.2.0'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:recyclerview-v7:24.2.1'
     compile 'com.android.support:cardview-v7:24.2.1'
 
     compile "com.squareup.picasso:picasso:2.4.0"
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.intuit.sdp:sdp-android:1.0.4'
 
     testCompile 'junit:junit:4.12'
     compile project(path: ':libs:ViewPagerIndicator-Library')
     compile files('libs/nineoldandroids-library-2.4.0.jar')
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
 }

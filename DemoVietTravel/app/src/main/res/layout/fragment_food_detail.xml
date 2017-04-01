@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:id="@+id/svFoodDetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+        <RelativeLayout
+            android:id="@+id/rlContainerFoodDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_2sdp">
+            <ImageView
+                android:id="@+id/ivFoodDetail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:src="@drawable/imageone"
+                android:scaleType="centerCrop"/>
+            <RelativeLayout
+                android:id="@+id/rlInfoFoodDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivFoodDetail"
+                android:layout_marginTop="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/tvTitleNameFoodDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Name food:"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:id="@+id/tvNameFoodDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Bánh Mì Thịt Quay"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/tvAddressPlaceDetail"/>
+                <TextView
+                    android:id="@+id/tvTitleAddressFoodDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Address food:"
+                    android:layout_below="@+id/tvNameFoodDetail"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:id="@+id/tvAddressPlaceDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="NA"
+                    android:layout_below="@+id/tvNameFoodDetail"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/tvTitleAddressFoodDetail"/>
+                <TextView
+                    android:id="@+id/tvTitleFoodPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Price:"
+                    android:layout_below="@+id/tvTitleAddressFoodDetail"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:id="@+id/tvFoodPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="3 - 4 $"
+                    android:layout_below="@+id/tvAddressPlaceDetail"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignLeft="@+id/tvAddressPlaceDetail"
+                    />
+                <TextView
+                    android:id="@+id/tvTitleInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="Wiki food:"
+                    android:layout_below="@+id/tvTitleFoodPrice"
+                    android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:id="@+id/tvInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="dasdas dsada \n daadasda \ndasda \n dasdadada"
+                    android:layout_below="@+id/tvTitleInfo"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

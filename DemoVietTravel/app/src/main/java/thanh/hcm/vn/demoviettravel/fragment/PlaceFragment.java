@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,13 +15,16 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import thanh.hcm.vn.demoviettravel.R;
@@ -41,6 +45,7 @@ public class PlaceFragment extends BaseFragment {
     LinearLayout rlListPlace;
     ArrayList<PlaceModel> arrayListPlace = new ArrayList<>();
     RecyclerView rcvListPlace;
+    ImageView img,img2,img3,img4,img5;
 
     private static PlaceFragment placeFragment = null;
 
@@ -89,59 +94,53 @@ public class PlaceFragment extends BaseFragment {
 
         rlListPlace.setVisibility(View.GONE);
 
+        FrameLayout root = (FrameLayout)view.findViewById(R.id.root);
+
+        DecimalFormat format = new DecimalFormat("#");
+
+        img = new ImageView(context);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(Math.round(getResources().getDimension(R.dimen._120sdp)), Math.round(getResources().getDimension(R.dimen._80sdp)));
+        params.leftMargin = Math.round(getResources().getDimension(R.dimen._48sdp));
+        params.topMargin  = Math.round(getResources().getDimension(R.dimen._15sdp));
+        root.addView(img, params);
+        img.setOnClickListener(this);
+
+        img2 = new ImageView(context);
+        //img2.setBackgroundColor(Color.CYAN);
+        FrameLayout.LayoutParams params2 = new FrameLayout.LayoutParams(Math.round(getResources().getDimension(R.dimen._120sdp)), Math.round(getResources().getDimension(R.dimen._85sdp)));
+        params2.leftMargin = Math.round(getResources().getDimension(R.dimen._78sdp)) ;
+        params2.topMargin  = Math.round(getResources().getDimension(R.dimen._96sdp));
+        root.addView(img2, params2);
+        img2.setOnClickListener(this);
+
+
+        img3 = new ImageView(context);
+        //img3.setBackgroundColor(Color.BLACK);
+        FrameLayout.LayoutParams params3 = new FrameLayout.LayoutParams(Math.round(getResources().getDimension(R.dimen._100sdp)), Math.round(getResources().getDimension(R.dimen._94sdp)));
+        params3.leftMargin = Math.round(getResources().getDimension(R.dimen._120sdp)) ;
+        params3.topMargin  = Math.round(getResources().getDimension(R.dimen._182sdp));
+        root.addView(img3, params3);
+
+        img3.setOnClickListener(this);
+
+
+        img4 = new ImageView(context);
+        //img4.setBackgroundColor(Color.WHITE);
+        FrameLayout.LayoutParams params4 = new FrameLayout.LayoutParams(Math.round(getResources().getDimension(R.dimen._110sdp)),Math.round(getResources().getDimension(R.dimen._60sdp)));
+        params4.leftMargin = Math.round(getResources().getDimension(R.dimen._110sdp)) ;
+        params4.topMargin  = Math.round(getResources().getDimension(R.dimen._276sdp));
+        root.addView(img4, params4);
+        img4.setOnClickListener(this);
+
+        img5 = new ImageView(context);
+        //img5.setBackgroundColor(Color.YELLOW);
+        FrameLayout.LayoutParams params5 = new FrameLayout.LayoutParams(Math.round(getResources().getDimension(R.dimen._90sdp)), Math.round(getResources().getDimension(R.dimen._110sdp)));
+        params5.leftMargin = Math.round(getResources().getDimension(R.dimen._50sdp)) ;
+        params5.topMargin  = Math.round(getResources().getDimension(R.dimen._310sdp));
+        root.addView(img5, params5);
+        img5.setOnClickListener(this);
         //get color pixel
 
-        final Bitmap bitmap = ((BitmapDrawable) ivMapPlace.getDrawable()).getBitmap();
-
-
-        ivMapPlace.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event == simulationEvent)
-                    return false;
-                int action = event.getAction();
-                int x = (int) event.getX();
-                int y = (int) event.getY();
-
-                int pixel = bitmap.getPixel(x, y);
-
-                int red = Color.red(pixel);
-                int green = Color.green(pixel);
-                int blue = Color.blue(pixel);
-
-                Log.e("color bitmap :","red :"+red +"-green :"+green+"-blue :"+blue);
-
-                Log.e("onTouchListener", "User touch at X:" + x + " Y:" + y);
-                long length = 0;
-                if (action == MotionEvent.ACTION_DOWN) {
-
-                    //click(v, x, y);
-//                    if (x >= widthScreen * 15 && x <= widthScreen * 63 && y >= heightScreen * 2 && y <= heightScreen * 19) {
-//                        Toast.makeText(context, "Mien Bac", Toast.LENGTH_SHORT).show();
-//                        rlListPlace.setVisibility(View.VISIBLE);
-//                        Contants.currentStatus = 1;
-//                    } else if (x >= widthScreen * 35 && x <= widthScreen * 68 && y >= heightScreen * 19 && y <= heightScreen * 37) {
-//                        Toast.makeText(context, "Mien Trung Bac", Toast.LENGTH_SHORT).show();
-//                    } else if (x >= widthScreen * 36 && x <= widthScreen * 77 && y >= heightScreen * 37 && y <= heightScreen * 58) {
-//                        Toast.makeText(context, "Mien Trung Nam", Toast.LENGTH_SHORT).show();
-//                    } else if (x >= widthScreen * 18 && x <= widthScreen * 48 && (y >= heightScreen * 58 || y >= heightScreen * 55) && y <= heightScreen * 80) {
-//                        Toast.makeText(context, "Mien Nam", Toast.LENGTH_SHORT).show();
-//                    }
-                    if(checkIsPlaceBac(x,y)){
-                        Toast.makeText(context, "Mien Bac", Toast.LENGTH_SHORT).show();
-                        rlListPlace.setVisibility(View.VISIBLE);
-                        Contants.currentStatus = 1;
-                    }else if(checkIsPlaceTrungBac(x,y)){
-                        Toast.makeText(context, "Mien Trung Bac", Toast.LENGTH_SHORT).show();
-                    }else if(checkIsPlaceTrungNam(x,y)){
-                        Toast.makeText(context, "Mien Trung Nam", Toast.LENGTH_SHORT).show();
-                    }else if(checkIsPlaceNam(x,y)){
-                        Toast.makeText(context, "Mien Nam", Toast.LENGTH_SHORT).show();}
-
-                }
-                return false;
-            }
-        });
         arrayListPlace.add(new PlaceModel(1, R.drawable.imageone, "Fansipan", "Sapa", "Thang 10 - Thang 11"));
         arrayListPlace.add(new PlaceModel(2, R.drawable.imagefive, "Vinh Ha Long", "Ha Long", "Thang 6 - Thang 9"));
         arrayListPlace.add(new PlaceModel(3, R.drawable.imagesfour, "Phong Nha ", "Thanh Hoa", "Thang 2 - Thang 3"));
@@ -157,45 +156,6 @@ public class PlaceFragment extends BaseFragment {
 
         ListPlaceAdapter placeAdapter = new ListPlaceAdapter(context, arrayListPlace);
         rcvListPlace.setAdapter(placeAdapter);
-    }
-
-    private boolean checkIsPlaceBac(int x, int y) {
-        boolean isStatus = false;
-        if (x >= widthScreen * 15 && x <= widthScreen * 63 && y >= heightScreen * 2 && y <= heightScreen * 19) {
-            isStatus = true;
-        }
-        return isStatus;
-    }
-
-    private boolean checkIsPlaceTrungBac(int x, int y) {
-        boolean isStatus = false;
-        //if(x>=widthScreen*35 && x<=widthScreen*68 && y>=heightScreen*19 && y<=heightScreen*37){
-        if (x >= widthScreen * 35 && x <= widthScreen * 50 && y >= heightScreen * 19 && y <= heightScreen * 25) {
-            isStatus = true;
-        } else if (x >= widthScreen * 50 && x <= widthScreen * 60 && y >= heightScreen * 25 && y <= heightScreen * 30) {
-            isStatus = true;
-        } else if (x >= widthScreen * 60 && x <= widthScreen * 68 && y >= heightScreen * 30 && y <= heightScreen * 37) {
-            isStatus = true;
-        }
-        return isStatus;
-    }
-
-    private boolean checkIsPlaceTrungNam(int x, int y) {
-        boolean isStatus = false;
-        if (x >= widthScreen * 66 && x <= widthScreen * 77 && y >= heightScreen * 37 && y <= heightScreen * 48) {
-            isStatus=true;
-        }else if(x >= widthScreen * 36 && x <= widthScreen * 77 && y >= heightScreen * 48 && (y <= heightScreen * 58 || y <= heightScreen * 60)){
-            isStatus=true;
-        }
-        return isStatus;
-    }
-
-    private boolean checkIsPlaceNam(int x, int y){
-        boolean isStatus = false;
-        if(x >= widthScreen * 18 && x <= widthScreen * 48 && y >= heightScreen * 55 && y <= heightScreen * 80){
-            isStatus=true;
-        }
-        return isStatus;
     }
 
     @Override
@@ -216,6 +176,14 @@ public class PlaceFragment extends BaseFragment {
     public void onStop() {
         super.onStop();
         EventBus.getDefault().unregister(this);
+
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        rlListPlace.setVisibility(View.GONE);
+        Contants.currentStatus = 0;
     }
 
     @Subscribe
@@ -230,7 +198,22 @@ public class PlaceFragment extends BaseFragment {
     @Override
     public void onClick(View view) {
         super.onClick(view);
+        if(view == img){
+            Toast.makeText(context, "Mien Bac", Toast.LENGTH_SHORT).show();
+            rlListPlace.setVisibility(View.VISIBLE);
+            Contants.currentStatus = 1;
+        }else if(view == img2){
+            Toast.makeText(context, "Mien Trung Bac", Toast.LENGTH_SHORT).show();
+        }else if(view == img3){
+            Toast.makeText(context, "Mien Trung Nam", Toast.LENGTH_SHORT).show();
+        }else if(view == img4){
+            Toast.makeText(context, "Mien Trung Nam", Toast.LENGTH_SHORT).show();
+        }else if(view == img5){
+            Toast.makeText(context, "Mien Nam", Toast.LENGTH_SHORT).show();
+        }
     }
 
-
+   public void itemListPlaceClick(){
+       switchFragment(context.getString(R.string.place_detail_page), null, false);
+   }
 }

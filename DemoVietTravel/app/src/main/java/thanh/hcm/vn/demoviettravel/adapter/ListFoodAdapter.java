@@ -16,6 +16,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import thanh.hcm.vn.demoviettravel.R;
+import thanh.hcm.vn.demoviettravel.activity.MainActivity;
 import thanh.hcm.vn.demoviettravel.model.FoodModel;
 import thanh.hcm.vn.demoviettravel.model.PlaceModel;
 
@@ -36,14 +37,17 @@ public class ListFoodAdapter extends RecyclerView.Adapter<ListFoodAdapter.MyView
 
         private ImageView ivPhoto;
         private TextView tvName,tvAddress,tvTime;
+        private RelativeLayout rlItemRowPlace;
 
         public MyViewHolder(View view) {
             super(view);
 
+            rlItemRowPlace = (RelativeLayout) view.findViewById(R.id.rlItemRowPlace);
             ivPhoto =(ImageView) view.findViewById(R.id.ivItemRowPlace);
             tvName =(TextView) view.findViewById(R.id.tvItemRowPlaceName);
             tvAddress=(TextView) view.findViewById(R.id.tvItemRowPlaceAddress);
             tvTime =(TextView) view.findViewById(R.id.tvItemRowPlaceTime);
+
         }
     }
 
@@ -72,6 +76,12 @@ public class ListFoodAdapter extends RecyclerView.Adapter<ListFoodAdapter.MyView
         holder.tvName.setText(food.getNameFood());
         holder.tvAddress.setText(food.getAddressFood());
         holder.tvTime.setText("Price : "+food.getPriceFood()+"$");
+        holder.rlItemRowPlace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.switchFragment(context.getString(R.string.food_detail_page), null, true);
+            }
+        });
     }
 
     @Override
